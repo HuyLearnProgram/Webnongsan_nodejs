@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "sa",
+    "password": "Hung00113399",
+    "database": "DB_Webns",
+    "host": "localhost",
+    "dialect": "mssql"
+  },
+  "test": {
+    "username": "sa",
+    "password": "Hung00113399",
+    "database": "DB_Webns",
+    "host": "localhost",
+    "dialect": "mssql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

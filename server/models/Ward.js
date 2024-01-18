@@ -1,20 +1,25 @@
-const { Sequelize, sequelize } = require('../config/dbConnect');
-const District = require('./District')
-const Ward = sequelize.define('Ward', {
-    WardID: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-        allowNull: false
-    },
-    Name: {
-        type: Sequelize.STRING(50),
-        allowNull: false
-    },
-    DistrictID: {
-        type: Sequelize.INTEGER,
-        allowNull: false
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Ward extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
     }
-});
-
-Ward.belongsTo(District, { foreignKey: 'DistrictID' });
-module.exports = Ward;
+  }
+  Ward.init({
+    WardID: DataTypes.INTEGER,
+    Name: DataTypes.STRING,
+    DistrictID: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'Ward',
+  });
+  return Ward;
+};
